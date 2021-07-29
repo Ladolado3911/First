@@ -54,13 +54,13 @@ final class GameCoordinator: GameCoordinatorProtocol {
         }
     }
     
-    func proceedToOpeningPicker(rootController controller: StartController,
-                                completion: @escaping () -> Void) {
-        let vc2 = OpeningFilterController.instantiateFromStoryboard()
-        vc2.coordinator = self
-        //vc2.rootController = controller
-        navigationController?.present(vc2, animated: true, completion: completion)
-    }
+//    func proceedToOpeningPicker(rootController controller: StartController,
+//                                completion: @escaping () -> Void) {
+//        let vc2 = OpeningFilterController.instantiateFromStoryboard()
+//        vc2.coordinator = self
+//        //vc2.rootController = controller
+//        navigationController?.present(vc2, animated: true, completion: completion)
+//    }
     
     func proceedToDifficultyPicker(rootController controller: OpeningFilterController) {
         let vc2 = DiffiucultyPickerController.instantiateFromStoryboard()

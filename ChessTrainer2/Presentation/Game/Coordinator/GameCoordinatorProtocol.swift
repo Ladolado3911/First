@@ -12,8 +12,8 @@ protocol GameCoordinatorProtocol: CoordinatorProtocol {
                                                     present style: PresentationStyle,
                                                     completion: @escaping () -> Void)
     
-    func proceedToOpeningPicker(rootController controller: StartController,
-                                completion: @escaping () -> Void)
+//    func proceedToOpeningPicker(rootController controller: StartController,
+//                                completion: @escaping () -> Void)
     
     func proceedToDifficultyPicker(rootController controller: OpeningFilterController)
     

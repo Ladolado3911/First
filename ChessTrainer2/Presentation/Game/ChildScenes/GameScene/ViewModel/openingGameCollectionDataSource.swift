@@ -105,6 +105,7 @@ class OpeningGameCollectionDataSource: CollectDataSource {
         currentMove = currentOpening!.newMoveSequence[moveIndex]
         
         updateLabels()
+        print(moveIndex)
 
         if moveIndex % 2 == 0 {
             moveChoices = currentOpening!.generate6ChoiceFor(correctMove: currentMove!, move: .white)

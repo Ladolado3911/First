@@ -24,7 +24,7 @@ class PickDifficultyViewModel {
     private var openingParser: OpeningParser = OpeningParser()
     private var data: [Opening]!
     weak var difficultyPicker: UIPickerView!
-    weak var rootController: StartController!
+    //weak var rootController: StartController!
     
     var minMaxMoves: MinMax {
         let testArr = data!.map { $0.movesCount }
