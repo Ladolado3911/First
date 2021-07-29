@@ -72,7 +72,7 @@ class OpeningGameCollectionDataSource: CollectDataSource {
         game = OpeningGame(data: openingsData)
         currentOpening = game!.data[0]
         currentMove = currentOpening!.newMoveSequence[0]
-        moveChoices = currentOpening!.generate6ChoiceFor(correctMove: currentMove!)
+        moveChoices = currentOpening!.generate6ChoiceFor(correctMove: currentMove!, move: .white)
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.rootController.openingName.text = self.currentOpening!.name
@@ -106,7 +106,12 @@ class OpeningGameCollectionDataSource: CollectDataSource {
         
         updateLabels()
 
-        moveChoices = currentOpening!.generate6ChoiceFor(correctMove: currentMove!)
+        if moveIndex % 2 == 0 {
+            moveChoices = currentOpening!.generate6ChoiceFor(correctMove: currentMove!, move: .white)
+        }
+        else {
+            moveChoices = currentOpening!.generate6ChoiceFor(correctMove: currentMove!, move: .black)
+        }
         rootController.openingName.text = currentOpening!.name
         collectView.reloadData()
         rootController.view.isUserInteractionEnabled = true

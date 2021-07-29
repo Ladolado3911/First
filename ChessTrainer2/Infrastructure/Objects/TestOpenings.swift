@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+enum Colour {
+    case white
+    case black
+}
+
 struct Opening {
 
     var jsonOpening: JsonOpening
@@ -33,9 +38,15 @@ struct Opening {
         jsonOpening = opening
     }
 
-    func generate6ChoiceFor(correctMove move: String) -> [String] {
+    func generate6ChoiceFor(correctMove move: String, move color: Colour) -> [String] {
+        var temp: [String] = []
+        switch color {
+        case .white:
+            temp = Moves.whiteMoves
+        case .black:
+            temp = Moves.blackMoves
+        }
         var moves2: [String] = []
-        var temp = Moves.moves
         if temp.contains(move) {
             temp = temp.filter { $0 != move }
         }
