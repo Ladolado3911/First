@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Opening Filter Controller-->
+        <scene sceneID="ivH-cX-WOn">
+            <objects>
+                <viewController storyboardIdentifier="OpeningFilterController" id="z6w-Ob-knx" customClass="OpeningFilterController" customModule="ChessTrainer2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ump-hI-omy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Enter opening name" translatesAutoresizingMaskIntoConstraints="NO" id="2fs-Tx-Fhy">
+                                <rect key="frame" x="20" y="64" width="374" height="51"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="arM-eA-13z">
+                                <rect key="frame" x="10" y="185" width="394" height="657"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 items selected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvh-Gq-72o">
+                                <rect key="frame" x="20" y="135" width="126" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsB-Im-hzg">
+                                <rect key="frame" x="314" y="135" width="80" height="30"/>
+                                <state key="normal" title="Deselect all"/>
+                                <connections>
+                                    <action selector="onDeselectAll:" destination="z6w-Ob-knx" eventType="touchUpInside" id="k1y-Dh-gZC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cqI-kh-lAn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2fs-Tx-Fhy" firstAttribute="trailing" secondItem="cqI-kh-lAn" secondAttribute="trailing" constant="-20" id="1rm-cA-Le3"/>
+                            <constraint firstItem="CsB-Im-hzg" firstAttribute="top" secondItem="2fs-Tx-Fhy" secondAttribute="bottom" constant="20" id="2EZ-17-vqH"/>
+                            <constraint firstItem="Hvh-Gq-72o" firstAttribute="top" secondItem="2fs-Tx-Fhy" secondAttribute="bottom" constant="20" id="5lV-82-KRM"/>
+                            <constraint firstItem="arM-eA-13z" firstAttribute="leading" secondItem="cqI-kh-lAn" secondAttribute="leading" constant="10" id="Id4-Q5-RFc"/>
+                            <constraint firstItem="2fs-Tx-Fhy" firstAttribute="leading" secondItem="cqI-kh-lAn" secondAttribute="leading" constant="20" id="PjH-pa-lFq"/>
+                            <constraint firstItem="arM-eA-13z" firstAttribute="top" secondItem="Hvh-Gq-72o" secondAttribute="bottom" constant="20" id="Z9a-wQ-Ixy"/>
+                            <constraint firstItem="2fs-Tx-Fhy" firstAttribute="top" secondItem="cqI-kh-lAn" secondAttribute="top" constant="20" id="lnZ-EU-DV2"/>
+                            <constraint firstItem="Hvh-Gq-72o" firstAttribute="leading" secondItem="cqI-kh-lAn" secondAttribute="leading" constant="20" id="m7j-Rl-CJd"/>
+                            <constraint firstItem="arM-eA-13z" firstAttribute="top" secondItem="CsB-Im-hzg" secondAttribute="bottom" constant="20" id="oQv-7w-nPL"/>
+                            <constraint firstItem="cqI-kh-lAn" firstAttribute="bottom" secondItem="arM-eA-13z" secondAttribute="bottom" constant="20" id="ta8-1s-OWK"/>
+                            <constraint firstItem="cqI-kh-lAn" firstAttribute="trailing" secondItem="arM-eA-13z" secondAttribute="trailing" constant="10" id="wXE-Mi-fOq"/>
+                            <constraint firstItem="cqI-kh-lAn" firstAttribute="trailing" secondItem="CsB-Im-hzg" secondAttribute="trailing" constant="20" id="x7r-zA-ob5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="deselectButton" destination="CsB-Im-hzg" id="RT3-Fd-zea"/>
+                        <outlet property="searchBar" destination="2fs-Tx-Fhy" id="puM-vf-3qs"/>
+                        <outlet property="selectedItemsLabel" destination="Hvh-Gq-72o" id="v0e-v3-1Dc"/>
+                        <outlet property="tblView" destination="arM-eA-13z" id="TIe-O4-lDv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z7b-uR-W2c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
