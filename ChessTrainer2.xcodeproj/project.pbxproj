@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		240D62BD2676261C002BEB1D /* OpeningParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240D62BC2676261C002BEB1D /* OpeningParser.swift */; };
+		241F260926B2F16B00B664A3 /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F260826B2F16B00B664A3 /* Scope.swift */; };
 		2423AFE826AEF00000A4D412 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2423AFE726AEF00000A4D412 /* LoadingViewController.swift */; };
 		2423AFEA26AEF01F00A4D412 /* LoadingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2423AFE926AEF01F00A4D412 /* LoadingViewController.storyboard */; };
 		24580D0026B195AF0087659A /* LaunchAnimationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24580CFE26B195AF0087659A /* LaunchAnimationController.storyboard */; };
@@ -104,6 +105,7 @@
 
 /* Begin PBXFileReference section */
 		240D62BC2676261C002BEB1D /* OpeningParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningParser.swift; sourceTree = "<group>"; };
+		241F260826B2F16B00B664A3 /* Scope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scope.swift; sourceTree = "<group>"; };
 		2423AFE726AEF00000A4D412 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		2423AFE926AEF01F00A4D412 /* LoadingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoadingViewController.storyboard; sourceTree = "<group>"; };
 		24580CFE26B195AF0087659A /* LaunchAnimationController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchAnimationController.storyboard; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 				3F5F36FC2662D5EF00FCD034 /* Moves.swift */,
 				ACE29D7A2673DBE300F1D9D8 /* OpeningFilter.swift */,
 				240D62BC2676261C002BEB1D /* OpeningParser.swift */,
+				241F260826B2F16B00B664A3 /* Scope.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -865,6 +868,7 @@
 				ACE29D7F2673F18600F1D9D8 /* stringExtension.swift in Sources */,
 				3F6FB335265FCECA00E41C41 /* LocalDatabaseHelpers.swift in Sources */,
 				3FE2BA9826878887003B07AE /* ChooseModeController.swift in Sources */,
+				241F260926B2F16B00B664A3 /* Scope.swift in Sources */,
 				ACE29D792673DAA200F1D9D8 /* GameModel.swift in Sources */,
 				3F6FB363265FD26F00E41C41 /* GeneralStyleView.swift in Sources */,
 				247247E126A32E730050AE89 /* UserCoordinator.swift in Sources */,

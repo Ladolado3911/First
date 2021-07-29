@@ -91,19 +91,15 @@ final class GameCoordinator: GameCoordinatorProtocol {
                              difficulty diff: Difficulty) -> [Opening] {
 
         let simplifiedOpeningSequences = openingsArr.map { Array($0.moveSequence.prefix(moves)) }
-        //print(simplifiedOpeningSequences)
         var openings: [Opening] = openingsArr
         for a in 0..<simplifiedOpeningSequences.count {
             openings[a].setMoveSequence(newSequence: simplifiedOpeningSequences[a])
         }
-        //print(openings.map { $0.newMoveSequence })
         let unifiedSequences = Array(Set(simplifiedOpeningSequences))
-        //print(unifiedSequences)
         var new: [Opening] = []
         var temp = unifiedSequences
 
         for a in 0..<openings.count {
-            //print(temp.count)
             if temp.isEmpty {
                 print("0!")
                 break
@@ -122,19 +118,20 @@ final class GameCoordinator: GameCoordinatorProtocol {
         switch diff {
         case .beginner(let scope):
             return returnResult(scope: scope, array: new)
-            
+
         case .junior(let scope):
             return returnResult(scope: scope, array: new)
 
         case .experienced(let scope):
             return returnResult(scope: scope, array: new)
-            
+
         case .master(let scope):
             return returnResult(scope: scope, array: new)
         }
     }
     
     func returnResult(scope sc: Scope, array arr: [Opening]) -> [Opening] {
+        //return Array(arr.shuffled().prefix(5))
         let arr2 = arr.filter { $0.newMovesCount <= sc.high && $0.newMovesCount > sc.low }
         if arr2.isEmpty {
             return arr
@@ -143,7 +140,7 @@ final class GameCoordinator: GameCoordinatorProtocol {
             return Array(arr2.prefix(5))
         }
     }
-    
+
     func showLoadingScreen() {
         let vc = LoadingViewController.instantiateFromStoryboard()
         vc.coordinator = self
