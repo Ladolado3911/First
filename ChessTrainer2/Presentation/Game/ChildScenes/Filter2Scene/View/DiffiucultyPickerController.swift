@@ -54,7 +54,6 @@ class DiffiucultyPickerController: GameViewController {
         coordinator?.proceedToGame(arr: openingsArr, movesCountFilter: level, difficulty: .junior(Scope(3, 6)))
     }
     
-    
     @IBAction func onHard(_ sender: Any) {
         let level = 10
         coordinator?.proceedToGame(arr: openingsArr, movesCountFilter: level, difficulty: .experienced(Scope(6, 10)))
